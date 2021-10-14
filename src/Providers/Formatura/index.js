@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { ListBeersContext } from "../ListBeers";
+import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 
 export const FormaturaContext = createContext([])
@@ -8,18 +8,20 @@ export const FormaturaProvider = ({ children }) => {
 
     const [inFormatura, setinFormatura] = useState([])
 
-    const { beers } = useContext(ListBeersContext)
+    const handleAddBeerFormatura = (beer) => {
+        const inList = inFormatura.find(item => item.id === beer.id)
 
-    const handleAddBeerFormatura = (beerId) => {
-        const addBeer = beers.find(item => item.id === beerId)
-
-        setinFormatura([...inFormatura, addBeer])
+        if(!inList) {
+            setinFormatura([...inFormatura, beer])
+        } else {
+            toast.error("Este produto já pertence à lista.")
+        }
     }
 
-    const handleRemoveBeerFormatura = (beerId) => {
-        const removeBeer = beers.filter(item => item.id !== beerId)
+    const handleRemoveBeerFormatura = (beer) => {
+        const removeBeer = inFormatura.filter(item => item.id !== beer.id)
 
-        setinFormatura([...inFormatura, removeBeer])
+        setinFormatura(removeBeer)
     }
 
     return (

@@ -7,12 +7,16 @@ const ButtonPage = () => {
 
 
     return (
-        <div>
+        <div className="btn-page-container">
             {
-                countPage === 1 ? <button disabled onClick={previousPage}> Página anterior </button> : <button onClick={previousPage}> Página anterior </button>
+                countPage === 1 ?
+                                 <button className="btn-page" disabled onClick={previousPage}> Página anterior </button> 
+                                    : <button className="btn-page" onClick={previousPage}> Página anterior </button>
             }
             {
-                countPage === 13 ? <button disabled onClick={nextPage}> Próxima página </button> : <button onClick={nextPage}> Próxima página </button>
+                countPage === 13 ?
+                                 <button className="btn-page" disabled onClick={nextPage}> Próxima página </button> 
+                                    : <button className="btn-page" onClick={nextPage}> Próxima página </button>
             }     
         </div>
     )

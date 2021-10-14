@@ -8,18 +8,18 @@ const CasamentoComponent = () => {
 
     return (
         <>
-            <h1> Casamento </h1>
+            <h1 className="title-page"> Casamento </h1>
             {
                 inCasamento.map(item => {
-                    return <div>
-                        <h2> {item.name} </h2>
+                    return <div className="beer-container" key={item.id}>
+                        <h2 className="beer-title"> {item.name} </h2>
                         <figure>
-                            <img src={item.image_url} alt={item.name} />
+                            <img className="beer-image" src={item.image_url} alt={item.name} />
                         </figure>
-                        <p> {item.description} </p>
-                        <p> Data de fabricação: {item.first_brewed} </p>
-                        <p> Litros: {item.volume.value}L </p>
-                        <button onClick={() => handleRemoveBeerCasamento(item.id)}> Remove </button>
+                        <p className="beer-description"> {item.description} </p>
+                        <p className="beer-date"> Data de fabricação: {item.first_brewed} </p>
+                        <p className="beer-volume"> Litros: {item.volume.value}L </p>
+                        <button className="btn-remove" onClick={() => handleRemoveBeerCasamento(item)}> Remover </button>
                     </div>
                 })
             }

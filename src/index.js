@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Providers from './Providers';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 ReactDOM.render(
   <React.StrictMode>
     <Providers>
       <BrowserRouter>
-        <App />
+        <App/>
       </BrowserRouter>
     </Providers>
   </React.StrictMode>,

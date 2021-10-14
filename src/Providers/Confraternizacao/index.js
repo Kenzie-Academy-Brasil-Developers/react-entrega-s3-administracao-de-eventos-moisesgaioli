@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import { ListBeersContext } from "../ListBeers";
-
+import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const ConfraternizacaoContext = createContext([])
 
@@ -8,18 +7,20 @@ export const ConfraternizacaoProvider = ({ children }) => {
 
     const [inConfraternizacao, setinConfraternizacao] = useState([])
 
-    const { beers } = useContext(ListBeersContext)
+    const handleAddBeerConfraternizacao = (beer) => {
+        const inList = inConfraternizacao.find(item => item.id === beer.id)
 
-    const handleAddBeerConfraternizacao = (beerId) => {
-        const addBeer = beers.find(item => item.id === beerId)
-
-        setinConfraternizacao([...inConfraternizacao, addBeer])
+        if(!inList) {
+            setinConfraternizacao([...inConfraternizacao, beer])
+        } else {
+            toast.error("Este produto já pertence à lista.")
+        }
     }
 
-    const handleRemoveBeerConfraternizacao = (beerId) => {
-        const removeBeer = beers.filter(item => item.id !== beerId)
+    const handleRemoveBeerConfraternizacao = (beer) => {
+        const removeBeer = inConfraternizacao.filter(item => item.id !== beer.id)
 
-        setinConfraternizacao([...inConfraternizacao, removeBeer])
+        setinConfraternizacao(removeBeer)
     }
 
     return (
