@@ -5,7 +5,7 @@ import Routes from './Routes';
 
 function App() {
   return (
-    <div className="App">
+    <main className="main-container">
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -18,7 +18,7 @@ function App() {
           pauseOnHover
         />
         <Routes />
-    </div>
+    </main>
   );
 }
 

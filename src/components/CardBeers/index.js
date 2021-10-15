@@ -11,7 +11,6 @@ const CardBeers = ({ item }) => {
     
     return (
         <>
-            <h1 className="title-page"> Cervejas disponíveis </h1>
             <div className="beer-container">
                 <h2 className="beer-title"> {item.name} </h2>
                 <figure>

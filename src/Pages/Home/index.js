@@ -8,8 +8,9 @@ const Home = () => {
     return (
         <>
             <Menu />
-            <ButtonPage />
+            <h1 className="title-page"> Cervejas disponíveis </h1>
             <ListBeers />
+            <ButtonPage />
         </>
     )
 }

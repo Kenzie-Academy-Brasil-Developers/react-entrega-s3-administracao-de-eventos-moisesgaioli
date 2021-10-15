@@ -10,7 +10,7 @@ const ListBeers = () => {
 
 
     return (
-        <div>
+        <div className="card-container">
             {
                beers.map(item => <CardBeers key={item.id} item={item} />)
             }

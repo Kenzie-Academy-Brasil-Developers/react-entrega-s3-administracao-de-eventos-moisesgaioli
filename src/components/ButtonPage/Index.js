@@ -1,5 +1,6 @@
 import { ListBeersContext } from "../../Providers/ListBeers";
 import { useContext } from "react";
+import "./styles.css"
 
 const ButtonPage = () => {
 
