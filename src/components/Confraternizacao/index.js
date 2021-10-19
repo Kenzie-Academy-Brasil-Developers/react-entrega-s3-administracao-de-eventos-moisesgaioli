@@ -8,7 +8,7 @@ const ConfraternizacaoComponent = () => {
 
     return (
         <>
-            <h1 className="title-page"> Comfraternização </h1>
+            <h1 className="title-page"> Confraternização </h1>
             <div className="pagextra-container">
                 {
                     inConfraternizacao.map(item => {

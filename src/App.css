@@ -97,5 +97,13 @@
     .btn-add {
         width: 220px;
     }
+
+    .title-page {
+        font-size: 38px;
+    }
+
+    .btn-remove {
+        width: 200px;
+    }
 }
 
